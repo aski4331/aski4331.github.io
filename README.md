@@ -11,7 +11,7 @@
 ## In-Classs Assignments
 
 
-* ICA1
+* [ICA1](https://aski4331.github.io/ica/ica1.pdf)
 * ICA2
 * ICA3
 * ICA4
@@ -31,7 +31,7 @@
 ## Weekly Assignments
 
 
-* WA1
+* [WA1](https://aski4331.github.io/wa/wa1.html)
 * WA2
 * WA3
 * WA4
