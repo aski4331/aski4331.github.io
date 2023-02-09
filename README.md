@@ -35,7 +35,7 @@
 * [WA1](https://aski4331.github.io/wa/wa1.html)
 * [WA2](https://aski4331.github.io/wa/wa2.html)
 * [WA3](https://aski4331.github.io/wa/wa3.html)
-* WA4
+* [WA4](https://aski4331.github.io/wa/wa4.html)
 * WA5
 * WA6
 * WA7
