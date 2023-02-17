@@ -1,0 +1,101 @@
+html
+{
+    font-family: sans-serif;
+}
+
+
+.main
+{
+position: relative;
+width: 67%;
+margin: auto;
+}
+
+#score
+{
+font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+font-size: 15pt;
+position: absolute;
+bottom: 83%;
+right: 1%;
+padding: 2pt;
+margin: 5pt;
+border: solid 5pt gold;
+border-radius: 5pt;
+width: 350px;
+background: rgba(255, 217, 0, 0.45);
+
+
+}
+
+#channel
+{
+    font-family:'Arial Narrow Bold', sans-serif;
+    font-size: 15pt;
+    
+    position: absolute;
+    bottom: 5%;
+    right: 73%;
+    background-color: rgba(106, 106, 231, 0.82);
+    border: solid 4pt rgb(31, 31, 98);
+    border-radius: 3pt;
+    padding: 2pt;
+    margin-left: 15pt;
+    
+}
+
+.image
+{
+    display: block;
+    width: 100%;
+    height: auto;
+    border: solid 1pt black;
+}
+
+#logo1
+{
+    width: 12%;
+    height: auto;
+    
+    float: left;
+    border: solid 2pt red;
+}
+
+#logo2
+{
+    width: 8%;
+    height: auto;
+    float: right;
+    border: solid 2pt rgb(255, 178, 35);
+}
+
+
+.title
+{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 12pt;
+    text-align: center;
+
+}
+
+
+
+#points1
+{
+    margin-right: 0.5pt;
+    padding-right: 2pt;
+    text-align: right;
+    float: right;
+    width: 22px;
+    border: solid 2pt black;
+    
+}
+
+#points2
+{
+    margin-left: 5pt;
+    padding-left: 2pt;
+    border: solid 2pt black;
+    width: 23px;
+    text-align: left;
+}
