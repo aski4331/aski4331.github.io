@@ -32,10 +32,10 @@ background: rgba(255, 217, 0, 0.45);
 {
     font-family:'Arial Narrow Bold', sans-serif;
     font-size: 15pt;
-    
+    width: 200px;
     position: absolute;
     bottom: 5%;
-    right: 73%;
+    right: 65%;
     background-color: rgba(106, 106, 231, 0.82);
     border: solid 4pt rgb(31, 31, 98);
     border-radius: 3pt;
