@@ -17,7 +17,9 @@
 * [ICA3b](https://aski4331.github.io/ica/ica3b.html)
 * [ICA4](https://aski4331.github.io/ica/ica4.html)
 * [ICA5](https://aski4331.github.io/ica/ica5/ica5.html)
-* ICA6
+* [ICA6(1)](https://aski4331.github.io/ica/ica6/ica6-part1.html)
+* [ICA6(2)](https://aski4331.github.io/ica/ica6/ica6-part2.html)
+* [ICA6(3)](https://aski4331.github.io/ica/ica6/ica6-part3.html)
 * ICA7
 * ICA8
 * ICA9
