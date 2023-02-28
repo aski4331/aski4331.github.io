@@ -5,7 +5,7 @@
 
 
 * [HTML](https://aski4331.github.io/html-midterm/page5.html)
-* CSS
+* [CSS](https://aski4331.github.io)
 * JS
 
 ## In-Classs Assignments
@@ -20,7 +20,7 @@
 * [ICA6(1)](https://aski4331.github.io/ica/ica6/ica6-part1.html)
 * [ICA6(2)](https://aski4331.github.io/ica/ica6/ica6-part2.html)
 * [ICA6(3)](https://aski4331.github.io/ica/ica6/ica6-part3.html)
-* ICA7
+* [ICA7](https://aski4331.github.io/ica/ica7.html)
 * ICA8
 * ICA9
 * ICA10

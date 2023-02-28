@@ -1,0 +1,120 @@
+
+
+#maker
+{
+    border-radius: 50vb;
+    background-color: green;
+    width: 25vw;
+    height: 25vw;
+    text-align: center;  
+    display: flex;
+    align-items: center;
+}
+
+#storyteller
+{
+    border-radius: 50vb;
+    background-color: orange;
+    width: 25vw;
+    height: 25vw;
+    text-align: center; 
+    display: flex;
+    align-items: center;
+    
+}
+
+#projects1
+{
+    border-radius: 50vb;
+    background-color: rgb(105, 59, 31);
+    width: 25vw;
+    height: 25vw;
+    text-align: center;
+    display: flex;
+    align-items: center;
+}
+
+#projects2
+{
+    border-radius: 50vb;
+    background-color: rgb(39, 133, 123);
+    width: 25vw;
+    height: 25vw;
+    text-align: center;
+    display: flex;
+    align-items: center;
+}
+
+#designer
+{
+    border-radius: 50vb;
+    background-color: rgb(121, 126, 121);
+    width: 25vw;
+    height: 25vw;
+    text-align: center;
+    display: flex;
+    align-items: center;
+}
+
+#resume
+{
+    border-radius: 50vb;
+    background-color: maroon;
+    width: 25vw;
+    height: 25vw;
+    text-align: center;
+    display: flex;
+    align-items: center;
+}
+
+.container
+{
+    display: grid;
+    grid-template-columns: 25vw 25vw 25vw;
+    
+    font-family:fantasy;
+    font-size: 4.5vw;
+    gap: 1vw;
+}
+
+body
+{
+    background-color: blanchedalmond;
+}
+
+#maker:hover
+{
+    background-color: rgb(75, 130, 75);
+}
+
+#storyteller:hover
+{
+    background-color: rgb(251, 176, 70);
+}
+
+#projects1:hover
+{
+    background-color: rgb(108, 75, 56);
+}
+
+#designer:hover
+{
+    background-color: rgb(166, 164, 164);
+}
+
+
+#resume:hover
+{
+    background-color: rgb(203, 80, 80);
+}
+
+#projects2:hover
+{
+    background-color:  rgb(106, 173, 166);
+}
+
+
+
+a { text-decoration: none;  }
+
+a:visited { text-decoration: none; color: black;}
