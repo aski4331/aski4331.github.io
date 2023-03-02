@@ -1,0 +1,146 @@
+body{
+    display: flex;
+    color: rgb(0, 0, 72);
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(137, 167, 204);
+}
+nav{
+    height: 50vh;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 20px;
+    background-color: rgb(226, 168, 43);
+    font-family: Brush Script MT, cursive;
+    color: rgb(29, 35, 105);;
+    transition: border-radius 3s linear;
+    
+}
+nav a{
+    width:10vw;
+    text-align: center;
+    text-decoration: none;
+   
+    
+}
+
+nav:hover
+{
+    background-color: rgb(249, 231, 143);
+    border-radius: 45%;
+    
+}
+
+
+h1
+{
+    font-family: Brush Script MT, cursive;
+    font-size: 30pt;
+}
+
+img
+{
+    width:40%;
+    height: 40%;
+}
+
+img:hover
+{
+    width: 75%;
+    height: 75%;
+    transition-duration: 2s;
+    transition-delay: 1s;
+}
+
+
+
+#red-ball{
+    background-color: rgb(220, 200, 20);
+    width: 30px;
+    height:30px;
+    border-radius: 50%;
+    position: absolute;
+    left:5vw;
+    top:0;
+    animation-delay: 3s;
+    animation-duration: 15s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-name: ballBounce;
+    box-shadow: 0 0 20px #fdff71, 0 0 30px #ff4da6, 0 0 40px #ffea4d, 0 0 50px #ff4da6, 0 0 60px #ff914d, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+}
+
+@keyframes ballBounce
+{
+    from
+    {
+        top:0;
+        left:5vw;
+    }
+
+    10%
+    {
+       top:95%;
+       left: 6vw; 
+    }
+
+    15% 
+    {
+        top: 20%;
+        left:10vw;
+    }
+
+    20% 
+    {
+        top: 95%;
+        left:20vw;
+    }
+
+    25% 
+    {
+        top: 40%;
+        left:30vw;
+    }
+
+    30% 
+    {
+        top: 95%;
+        left:40vw;
+    }
+
+    35% 
+    {
+        top: 60%;
+        left:50vw;
+    }
+
+    40% 
+    {
+        top: 95%;
+        left:60vw;
+    }
+
+    45% 
+    {
+        top: 70%;
+        left:70vw;
+    }
+
+    50% 
+    {
+        top: 95%;
+        left:80vw;
+    }
+
+    60% 
+    {
+        top: 0%;
+        left:80vw;
+    }
+
+    to
+    {
+
+    }
+}
