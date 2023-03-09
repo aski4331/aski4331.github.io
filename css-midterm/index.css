@@ -1,4 +1,76 @@
+.circle
+{
+    background-color: rgb(228, 228, 228);
+    background: url("/img/planets/planet1.png");
+    border-radius: 40vw;
+    width: 20vw;
+    height: 20vw;
+    /*box-shadow: 0 0 20px #2d2d2b, 0 0 30px #714dff, 0 0 40px #652323, 0 0 50px #258489, 0 0 60px #5d2676, 0 0 70px #1c0063, 0 0 80px #1d1943;*/
+    margin: auto;
+}
 
+header
+{
+    font-family: Brushstroke, fantasy;
+    border-radius: 3vw;
+    padding: 1vw;
+    background:#bfb2ff;
+    width: 90vw;
+    margin: auto;
+    margin-bottom: 1vw;
+    font-size: 2vw;
+
+}
+
+nav
+{
+    font-family: Brushstroke, fantasy;
+    border-radius: 3vw;
+    padding: 1vw;
+    background:#8b899c;
+    width: 90vw;
+    margin: auto;
+    margin-bottom: 1vw;
+    font-size: 2vw;
+    display: flex;
+    flex-direction: row;
+}
+
+
+.circle:hover
+{
+    
+    background: url("/img/projects/IMG_3306.PNG");
+    background-size: contain;
+    background-color: rgb(228, 228, 228);
+
+
+    transition-timing-function:cubic-bezier(0.5, 0, 0, 1);
+    transition-duration: 4s;
+    transform: rotateX(180deg);
+    box-shadow: 0 0 20px #fdff71, 0 0 30px #ff4da6, 0 0 40px #ffea4d, 0 0 50px #ff4da6, 0 0 60px #ff914d, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+}
+
+
+
+body
+{
+    background: rgb(13, 13, 13);
+    
+}
+
+.container
+{
+    display: grid;
+    grid-template-columns: 25vw 25vw 25vw;
+    font-family:fantasy;
+    font-size: 4vw;
+    gap: 3vw; 
+    margin: auto;
+    width: max-content;
+   
+    
+}
 
 #maker
 {
@@ -6,9 +78,10 @@
     background-color: green;
     width: 25vw;
     height: 25vw;
-    text-align: center;  
+    text-align: center; 
     display: flex;
     align-items: center;
+    
 }
 
 #storyteller
@@ -26,7 +99,7 @@
 #projects1
 {
     border-radius: 50vb;
-    background-color: rgb(105, 59, 31);
+    background-color: rgb(178, 86, 28);
     width: 25vw;
     height: 25vw;
     text-align: center;
@@ -37,7 +110,7 @@
 #projects2
 {
     border-radius: 50vb;
-    background-color: rgb(39, 133, 123);
+    background-color: rgb(18, 137, 158);
     width: 25vw;
     height: 25vw;
     text-align: center;
@@ -45,7 +118,7 @@
     align-items: center;
 }
 
-#designer
+#space
 {
     border-radius: 50vb;
     background-color: rgb(121, 126, 121);
@@ -59,7 +132,7 @@
 #resume
 {
     border-radius: 50vb;
-    background-color: maroon;
+    background-color: rgb(206, 0, 0);
     width: 25vw;
     height: 25vw;
     text-align: center;
@@ -67,24 +140,13 @@
     align-items: center;
 }
 
-.container
-{
-    display: grid;
-    grid-template-columns: 25vw 25vw 25vw;
-    
-    font-family:fantasy;
-    font-size: 4.5vw;
-    gap: 1vw;
-}
 
-body
-{
-    background-color: blanchedalmond;
-}
+
 
 #maker:hover
 {
     background-color: rgb(75, 130, 75);
+    transition: transform 250ms;
 }
 
 #storyteller:hover
@@ -94,10 +156,10 @@ body
 
 #projects1:hover
 {
-    background-color: rgb(108, 75, 56);
+    background-color: rgb(186, 112, 67);
 }
 
-#designer:hover
+#space:hover
 {
     background-color: rgb(166, 164, 164);
 }
@@ -115,6 +177,13 @@ body
 
 
 
-a { text-decoration: none;  }
+a { text-decoration: none; color: black; }
 
 a:visited { text-decoration: none; color: black;}
+
+
+
+@media only screen and (max-width: 400px)
+{
+
+}
