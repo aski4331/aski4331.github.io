@@ -1,0 +1,465 @@
+:root {
+    --radius: 50vb;
+    --size: 25vw;
+  }
+
+
+.circle
+{
+   
+    border-radius: 40vw;
+    width: 20vw;
+    height: 20vw;
+    margin: auto;
+    
+}
+
+.top
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2vw;
+}
+
+
+body
+{
+    background: rgb(13, 13, 13);
+    
+}
+
+.container
+{
+    display: grid;
+    grid-template-columns: 25vw 25vw 25vw;
+    font-family:fantasy;
+    font-size: 4vw;
+    gap: 3vw; 
+    margin: auto;
+    width: max-content;
+    align-items: center;
+   
+    
+}
+
+
+header
+{
+    font-family: Brushstroke, fantasy;
+    border-radius: 2vw;
+    padding: 1vw;
+    background:#504d5e;
+    width: 90vw;
+    margin: auto;
+    margin-bottom: 1vw;
+    font-size: 2vw;
+
+}
+
+ul
+{
+    font-family: Brushstroke, fantasy;
+    border-radius: 2vw;
+    padding: 0.5vw;
+    background: #d6d6d6;
+    width: 50vw;
+    margin: auto;
+    margin-bottom: 2vw;
+    font-size: 1.5vw;
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    text-align: left;
+    line-height: 150%;
+    
+}
+
+aside
+{
+    font-family: Brushstroke, fantasy;
+    border-radius: 2vw;
+    padding: 1vw;
+    background: #8b899c;
+    width: 70vw;
+    margin: auto;
+    margin-bottom: 1vw;
+    font-size: 1.75vw;
+    text-align: center;
+}
+
+li
+{
+    flex:1;
+    margin-left:4vw;
+    border-top: 2pt solid #d6d6d6;
+    width: 10vw;
+    padding:0;
+}
+
+li:hover
+{
+    border-top: 2pt double #232226;
+}
+
+
+.circle:hover
+{
+    
+    transition-timing-function:cubic-bezier(0.5, 0, 0, 1);
+    transition-duration: 4s;
+    transform: rotateX(180deg);
+    box-shadow: 0 0 1vw #fdff71, 0 0 1.5vw #ff4da6, 0 0 2vw #ffea4d, 0 0 2.5vw #ff4da6, 0 0 3vw #ff914d, 0 0 3.5vw #ff4da6, 0 0 3vw #ff4da6;
+}
+
+
+#a
+{
+    background: url("/img/planets/planet1.png");
+    background-size: 100%;
+}
+
+#a:hover
+{
+    background: url("/img/projects/IMG_3306.PNG");
+    background-size: 120%;
+    background-color: rgb(228, 228, 228);
+    
+}
+
+#b
+{
+    background: url("/img/planets/planet2.jpg");
+    background-size: 100%;
+    
+}
+
+#b:hover
+{
+    background: url("/img/projects/IMG_3297.PNG");
+    background-size: 120%;
+    background-color: rgb(228, 228, 228);
+}
+
+
+#c
+{
+    background: url("/img/planets/planet7.jpg");
+    background-size: 100%;
+}
+#c:hover
+{
+    background: url("/img/projects/IMG_3298.PNG");
+    background-size: 120%;
+    background-color: rgb(228, 228, 228);
+}
+
+
+#d
+{
+    background: url("/img/planets/planet4.png");
+    background-size: 100%;
+}
+#d:hover
+{
+    background: url("/img/projects/Front1.png");
+    background-size: 120%;
+    background-color: rgb(228, 228, 228);
+}
+
+
+#e
+{
+    background: url("/img/planets/planet8.jpg");
+    background-size: 100%;
+}
+#e:hover
+{
+    background: url("/img/projects/IMG_3304.PNG");
+    background-size: cover;
+    background-color: rgb(228, 228, 228);
+}
+
+
+#f
+{
+    background: url("/img/planets/planet6.png");
+    background-size: 100%;
+}
+#f:hover
+{
+    background: url("/img/projects/IMG_3302.jpg");
+    background-size: cover;
+    background-color: rgb(228, 228, 228);
+}
+
+
+
+#maker
+{
+    border-radius: var(--radius);
+    background-color: green;
+    width: var(--size);
+    height: var(--size);
+    text-align: center; 
+    display: flex;
+    align-items: center;
+    
+}
+
+#storyteller
+{
+    border-radius: var(--radius);
+    background-color: orange;
+    width: var(--size);
+    height: var(--size);
+    text-align: center; 
+    display: flex;
+    align-items: center;
+    
+}
+
+#projects1
+{
+    border-radius: var(--radius);
+    background-color: rgb(178, 86, 28);
+    width: var(--size);
+    height: var(--size);;
+    text-align: center;
+    display: flex;
+    align-items: center;
+}
+
+#projects2
+{
+    border-radius: var(--radius);
+    background-color: rgb(18, 137, 158);
+    width: var(--size);
+    height: var(--size);
+    text-align: center;
+    display: flex;
+    align-items: center;
+}
+
+#space
+{
+    border-radius: var(--radius);
+    background-color: rgb(121, 126, 121);
+    width: var(--size);
+    height: var(--size);
+    text-align: center;
+    display: flex;
+    align-items: center;
+}
+
+#resume
+{
+    border-radius: var(--radius);
+    background-color: rgb(206, 0, 0);
+    width: var(--size);
+    height: var(--size);
+    text-align: center;
+    display: flex;
+    align-items: center;
+}
+
+
+
+
+#maker:hover
+{
+    background-color: rgb(75, 130, 75);
+    transition: transform 250ms;
+}
+
+#storyteller:hover
+{
+    background-color: rgb(251, 176, 70);
+}
+
+#projects1:hover
+{
+    background-color: rgb(186, 112, 67);
+}
+
+#space:hover
+{
+    background-color: rgb(166, 164, 164);
+}
+
+
+#resume:hover
+{
+    background-color: rgb(203, 80, 80);
+}
+
+#projects2:hover
+{
+    background-color:  rgb(106, 173, 166);
+}
+
+
+
+a { text-decoration: none; color: black; }
+
+a:visited { text-decoration: none; color: black;}
+
+
+
+
+
+@media only screen and (max-width: 400px)
+{
+
+    .circle
+    {
+        border-radius: 80vw;
+        width: 40vw;
+        height: 40vw;
+        margin: auto;
+    }
+
+
+
+    .container
+    {
+        grid-template-columns: 25vw;
+        align-content: center;
+        font-size: 7vw;
+        justify-items:center;
+    }
+
+    :root {
+        --radius: 80vb;
+        --size: 40vw;
+    }
+
+
+    aside
+    {
+        width: 30vw;
+        background-color: transparent;
+        border-radius: 0;
+        font-size: 2.25vw;
+        
+    }
+
+    header
+    {
+        width:55vw;
+        background-color: transparent;
+        border-radius: 0;
+        font-size: 2.25vw;
+        border-right: 2pt double #232226;
+        
+    }
+
+    ul
+    {
+        margin-top: 0.25vw;
+        flex-direction: column;
+        width: 25vw;
+        background-color: transparent;
+        border-radius: 0;
+        font-size: 2vw;
+        text-align: left;
+        line-height: 110%;
+        
+    }
+
+
+    .top
+    {
+        flex-direction: row;
+        background-image: linear-gradient(#504d5e, #8b899c, #d6d6d6);
+        text-align: center;
+        margin-bottom: 5vw;
+        border-radius: 3vw;
+    }
+
+    li
+    {
+        border-top: 2pt solid transparent;
+    }
+
+ 
+
+}
+
+/*bigger than 1000px*/
+@media only screen and (min-width: 1000px)
+{
+
+    .circle
+    {
+        border-radius: 30vw;
+        width: 15vw;
+        height: 15vw;
+        margin: auto;
+    }
+
+    .container
+    {
+        grid-template-columns: 20vw 20vw 20vw 20vw;
+        align-content: center;
+        font-size: 2.3vw;
+        justify-items:center;
+    }
+
+    :root {
+        --radius: 30vb;
+        --size: 15vw;
+    }
+
+
+    aside
+    {
+        width: 30vw;
+        background-color: transparent;
+        border-radius: 0;
+        font-size: 1.75vw;
+        
+    }
+
+    header
+    {
+        width:55vw;
+        background-color: transparent;
+        border-radius: 0;
+        font-size: 2vw;
+        border-right: 2pt double #232226;
+    }
+
+    ul
+    {
+        
+
+        flex-direction: column;
+        width: 25vw;
+        background-color: transparent;
+        border-radius: 0;
+        font-size: 1.5vw;
+        text-align: left;
+    }
+
+
+    .top
+    {
+        flex-direction: row;
+        background-image: linear-gradient(#504d5e, #8b899c, #d6d6d6);
+        text-align: center;
+        margin-bottom: 5vw;
+        border-radius: 3vw;
+        align-items: center;
+    }
+
+   
+    li
+    {
+        border-top: 2pt solid transparent;
+    }
+
+
+
+
+}
