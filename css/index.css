@@ -33,7 +33,7 @@ body
 {
     display: grid;
     grid-template-columns: 25vw 25vw 25vw;
-    font-family:fantasy;
+    font-family:Impact, fantasy;
     font-size: 4vw;
     gap: 3vw; 
     margin: auto;
@@ -46,7 +46,7 @@ body
 
 header
 {
-    font-family: Brushstroke, fantasy;
+    font-family: Impact, fantasy;
     border-radius: 2vw;
     padding: 1vw;
     background:#504d5e;
@@ -59,7 +59,7 @@ header
 
 ul
 {
-    font-family: Brushstroke, fantasy;
+    font-family: Impact, fantasy;
     border-radius: 2vw;
     padding: 0.5vw;
     background: #d6d6d6;
@@ -77,7 +77,7 @@ ul
 
 aside
 {
-    font-family: Brushstroke, fantasy;
+    font-family: Impact, fantasy;
     border-radius: 2vw;
     padding: 1vw;
     background: #8b899c;
