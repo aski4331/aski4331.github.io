@@ -1,6 +1,7 @@
 body {
     font-family: helvetica, sans-serif;
     width: 350px;
+    background-color: darkgray;
   }
 
   label {
@@ -36,4 +37,9 @@ body {
     background-color: blueviolet;
     font-size: 15pt;
     border-radius: 10pt;;
+  }
+
+  #customname
+  {
+    font-size: 15pt;
   }
