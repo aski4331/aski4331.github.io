@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ica9</title>
+
+    <style>
+        #button
+        {
+            border: 7px solid darkorange;
+            border-radius: 20px;
+            background-color: darkgreen;
+            padding: 25px 50px;
+            width: 250px;
+            text-align: center;
+            font-size: 50px;
+            margin-top: 10px;
+        }
+
+        #button2
+        {
+            border: 7px solid blue;
+            border-radius: 50px;
+            background-color: lightblue;
+            padding: 20px 40px;
+            width: 200px;
+            text-align: center;
+            font-size: 50px;
+            margin-top: 10px;
+        }
+
+        .guessSubmit
+        {
+            font-size: 20px;
+            background-color: palevioletred;
+            border-radius: 10px;
+        }
+
+        label
+        {
+            font-size: 20px;
+        }
+
+        .guessField
+        {
+            font-size: 20px;
+        }
+
+
+    </style>
+</head>
+<body>
+
+
+
+    
+
+<div class="form">
+    <label for="guessField">Tell us your name: </label>
+    <input type="string" id="guessField" class="guessField" />
+    <input type="submit" value="OK" class="guessSubmit" />
+</div>
+
+<div id="button">
+</div>
+
+<div id="button2">
+    
+
+</div>
+
+
+    <script>
+        console.log("Hello, World!")
+        let btn = document.querySelector("#button"); //queryselector references an element
+        let btn2 = document.querySelector("#button2");
+        //console.log(btn);
+
+
+        function checkGuess() {
+            alert("Hello, " + userGuess.value + "!");
+         }
+
+         
+        function alert2() {
+            alert("No! Why did you click that? You've ruined everything!");
+         }
+
+
+         let guessBtn = document.querySelector(".guessSubmit");
+         let userGuess = document.querySelector(".guessField");
+         //console.log(guessBtn);
+         guessBtn.addEventListener('click', checkGuess);
+         guessBtn.addEventListener('click', changeBtn);
+       
+
+         //if user clicks on the button, (changes the value of the btn variable) run function changeBtn
+         //btn.addEventListener('click', changeBtn); //listens for an event on the page that happens to the variable
+
+         btn.addEventListener('click', changeBtn2); //listens for an event on the page that happens to the variable
+
+         
+
+        function changeBtn() {
+            //console.log("This worked");
+            btn.textContent = "Click me, " + userGuess.value + "!";
+            btn.style.backgroundColor = "darkorange";
+            btn.style.border = " 7px solid darkgreen";
+            btn.style.color = "white";
+            
+        }
+
+
+        function changeBtn2()
+        {
+            btn2.textContent = "No! Click me, " + userGuess.value + "!";
+            btn2.style.backgroundColor = "darkpurple";
+            btn2.style.border = " 7px solid darkyellow";
+            btn2.style.color = "white";
+        }
+
+        function changeBtn2laugh() {
+            btn.textContent = "MWAAHAHAHAHAAAAA!!!";
+            btn.style.backgroundColor = "black";
+            btn.style.border = " 20px solid red";
+            btn.style.color = "red";
+            btn.style.borderRadius = "400pt";
+            btn.style.fontSize = "25pt";
+            btn.style.width = "400pt";
+
+            btn2.textContent = "NOOOOOOOOOOO!";
+            btn2.style.backgroundColor = "lightgrey";
+            btn2.style.border = " 10px solid darkgrey";
+            btn2.style.color = "darkgrey";
+            btn2.style.borderRadius = "400pt";
+            btn2.style.fontSize = "25pt";
+            btn2.style.width = "400pt";
+        }
+
+
+        btn2.addEventListener('click', alert2); //listens for an event on the page that happens to the variable
+        btn2.addEventListener('click', changeBtn2laugh); //listens for an event on the page that happens to the variable
+
+
+
+    </script>
+
+</body>
+</html>
