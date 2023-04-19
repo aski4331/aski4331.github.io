@@ -4,3 +4,43 @@ click effect decreases as the nunber gets higher?
 image of sound speaker gets bigger
 have to click freeze to get volume to stay at that level
 */
+
+body
+{
+  background-color: rgb(103, 103, 103);
+}
+
+
+.output
+{
+  text-align: center;  
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 30pt;
+}
+
+p
+{
+  text-align: center;  
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 20pt;
+}
+
+.increase-button
+{  
+    margin-bottom: 20px;
+    margin: auto;
+    display: block;
+    width: 70px;
+    padding-top: 20px;
+}
+
+.freeze-button
+{ 
+    margin-top: 20px;
+    margin: auto;
+    display: block;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: rgb(168, 168, 168);
+    border-radius: 15%;
+    font-size: larger;
+}
