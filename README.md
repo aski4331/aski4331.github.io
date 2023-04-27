@@ -6,7 +6,7 @@
 
 * [HTML](https://aski4331.github.io/html-midterm/page5.html)
 * [CSS](https://aski4331.github.io)
-* JS
+* [JS](https://aski4331.github.io/final/final.html)
 
 ## In-Classs Assignments
 
@@ -26,7 +26,6 @@
 * [ICA11](https://aski4331.github.io/ica/ica11.html)
 * [ICA12](https://aski4331.github.io/ica/ica12.html)
 * [ICA13](https://aski4331.github.io/wa/wa13.html)
-* ICA14
 * ICA15
 
 
@@ -45,5 +44,4 @@
 * [WA11](https://aski4331.github.io/wa/wa11.html)
 * [WA12](https://aski4331.github.io/wa/wa12.html)
 * [WA13](https://aski4331.github.io/wa/theWA13.html)
-* WA14
-* WA15
+* [WA14](https://aski4331.github.io/wa/wa14.html)

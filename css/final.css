@@ -1,0 +1,91 @@
+body
+{
+    background-color: #484848;
+}
+
+
+main
+{
+    position: absolute;
+    right: 50%;
+    display: grid;
+    grid-template-columns: 150pt 150pt;
+    text-align: center;
+    grid-template-rows: 150pt 150pt;
+    justify-items: center;
+    align-items: center;
+    width: 200pt;
+}
+
+
+.button
+{
+    width: 100pt;
+    height: 100pt;
+    border-radius: 60pt;
+    border: 4pt solid #111111
+}
+
+#one
+{
+    background-color: red;
+
+}
+
+#two
+{
+    background-color: yellow;
+
+}
+
+#three
+{
+    background-color: green;
+
+}
+
+#four
+{
+    background-color: blue;
+
+}
+
+#words
+{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20pt;
+}
+
+.start-button
+{
+    width: 100pt;
+    height: 50pt;
+    border-radius: 20pt;
+    border: 2pt solid #111111
+}
+
+
+#one:active
+{
+    background-color: rgb(255, 118, 118);
+}
+
+#two:active
+{
+    background-color: rgb(255, 255, 165);
+}
+
+#three:active
+{
+    background-color: rgb(73, 175, 73);
+}
+
+#four:active
+{
+    background-color: rgb(117, 117, 254);
+}
+
+#start:active
+{
+    background-color: grey;
+}
