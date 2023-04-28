@@ -23,7 +23,8 @@ main
     width: 100pt;
     height: 100pt;
     border-radius: 60pt;
-    border: 4pt solid #111111
+    border: 4pt solid #111111;
+
 }
 
 #one
@@ -61,7 +62,21 @@ main
     width: 100pt;
     height: 50pt;
     border-radius: 20pt;
-    border: 2pt solid #111111
+    border: 2pt solid #111111;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 15pt;
+}
+
+
+.sequence-button
+{
+    width: 100pt;
+    height: 50pt;
+    border-radius: 30pt;
+    border: 2pt solid #111111;
+    background-color: rgb(156, 156, 156);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 11pt;
 }
 
 
@@ -72,7 +87,7 @@ main
 
 #two:active
 {
-    background-color: rgb(255, 255, 165);
+    background-color: rgb(232, 232, 158);
 }
 
 #three:active
@@ -87,5 +102,11 @@ main
 
 #start:active
 {
-    background-color: grey;
+    background-color: rgb(189, 189, 189);
+}
+
+
+#sequence:active
+{
+    background-color: rgb(118, 118, 118);
 }
