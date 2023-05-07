@@ -5,6 +5,9 @@ let twoCheck = false;
 let threeCheck = false;
 let fourCheck = false;
 
+let score = 0;
+let prevScore = 0;
+
 
 const oneButton = document.querySelector('#one');
 oneButton.addEventListener('click', redClick);
@@ -23,6 +26,36 @@ startButton.addEventListener('click', start); //start
 
 const sequenceButton = document.querySelector('#sequence');
 sequenceButton.addEventListener('click', getSequence);
+
+const title = document.querySelector('#words');
+
+
+const audio1 = new Audio("/audio/beep1.mp3");
+const audio2 = new Audio("/audio/beep2.mp3");
+const audio3 = new Audio("/audio/beep3.mp3");
+const audio4 = new Audio("/audio/beep4.mp3");
+
+//https://www.soundjay.com/beep-sounds-1.html
+
+
+
+//start game button 
+//on start, play a song, then delay, then start first sequence
+
+function startGame()
+{
+    audio1.play();  delay(500);
+    audio2.play();  delay(500);
+    audio3.play();  delay(500);
+    audio4.play();  delay(500);
+    console.log("Game has been started.");
+    delay(1500);
+    getSequence();
+}
+
+
+
+
 
 /*
 function oneFun()
@@ -56,6 +89,7 @@ function random(min, max)
 }
 //end random function
 
+startButton.style.visibility = "hidden";
 //arrays:
 
 let compSequence = [];
@@ -67,9 +101,15 @@ let userNum = 0;
 function start()
 {
     startButton.style.visibility = "hidden";
-    sequenceButton.style.visibility = "visible";
+    
     userNum = 0;
     userSequence = [];
+
+    oneButton.style.visibility = "visible";
+    twoButton.style.visibility = "visible";
+    threeButton.style.visibility = "visible";
+    fourButton.style.visibility = "visible";
+
     timeStart();
 }
 
@@ -107,7 +147,23 @@ function redClick()
     if (end() > 2) //check time, over two seconds
         { console.log("too slow"); failed(); } //run failure function if time is over
     else if (userSequence[userNum - 1] === compSequence[userNum - 1]) //checks if click was correct
-        { timeStart(); }  //starts new time
+        {
+            if (userNum == sequenceNum)
+            {
+
+                oneButton.style.visibility = "hidden";
+                twoButton.style.visibility = "hidden";
+                threeButton.style.visibility = "hidden";
+                fourButton.style.visibility = "hidden";
+
+                sequenceButton.style.visibility = "visible";
+                score++;
+                title.textContent = ("Score: " + score);
+
+
+            }
+             timeStart(); 
+        }  //starts new time
     else
         { console.log(userSequence[userNum - 1] + " =? " + compSequence[userNum - 1]); failed(); } //run failure function
 }
@@ -121,7 +177,25 @@ function yellowClick()
     if (end() > 2) //check time, over two seconds
         { failed(); } //run failure function if time is over
     else if (userSequence[userNum - 1] === compSequence[userNum - 1]) //checks if click was correct
-        { timeStart(); }  //starts new time
+        { 
+            if (userNum == sequenceNum)
+            {
+
+                oneButton.style.visibility = "hidden";
+                twoButton.style.visibility = "hidden";
+                threeButton.style.visibility = "hidden";
+                fourButton.style.visibility = "hidden";
+
+                sequenceButton.style.visibility = "visible";
+                score++;
+                title.textContent = ("Score: " + score);
+
+
+            }
+            
+            timeStart(); 
+        
+        }  //starts new time
     else
         { console.log(userSequence[userNum - 1] + " =? " + compSequence[userNum - 1]); failed(); } //run failure function
 }
@@ -135,7 +209,25 @@ function greenClick()
     if (end() > 2) //check time, over two seconds
         { failed(); } //run failure function if time is over
     else if (userSequence[userNum - 1] === compSequence[userNum - 1]) //checks if click was correct
-        { timeStart(); }  //starts new time
+        { 
+            if (userNum == sequenceNum)
+            {
+
+                oneButton.style.visibility = "hidden";
+                twoButton.style.visibility = "hidden";
+                threeButton.style.visibility = "hidden";
+                fourButton.style.visibility = "hidden";
+
+                sequenceButton.style.visibility = "visible";
+                score++;
+                title.textContent = ("Score: " + score);
+
+
+            }
+
+            timeStart(); 
+        
+        }  //starts new time
     else
         { console.log(userSequence[userNum - 1] + " =? " + compSequence[userNum - 1]); failed(); } //run failure function
 }
@@ -149,10 +241,36 @@ function blueClick()
     if (end() > 2) //check time, over two seconds
         { failed(); } //run failure function if time is over
     else if (userSequence[userNum - 1] === compSequence[userNum - 1]) //checks if click was correct
-        { timeStart(); }  //starts new time
+        { 
+            
+            if (userNum == sequenceNum)
+            {
+
+                oneButton.style.visibility = "hidden";
+                twoButton.style.visibility = "hidden";
+                threeButton.style.visibility = "hidden";
+                fourButton.style.visibility = "hidden";
+
+                sequenceButton.style.visibility = "visible";
+                score++;
+                title.textContent = ("Score: " + score);
+
+
+            }
+            
+            timeStart(); 
+        
+        
+        
+        }  //starts new time
     else
         { console.log(userSequence[userNum - 1] + " =? " + compSequence[userNum - 1]); failed(); } //run failure function
 }
+
+
+
+//if click is last one: if userNum  = sequencenum
+//hide game, show sequence button, increment score
 
 
 
@@ -165,6 +283,13 @@ const delay = ms => new Promise(res => setTimeout(res, ms));
 
 async function getSequence()
 {
+    title.textContent = ("Score: " + score);
+    oneButton.style.visibility = "visible";
+    twoButton.style.visibility = "visible";
+    threeButton.style.visibility = "visible";
+    fourButton.style.visibility = "visible";
+    
+    //title.textContent = ("Remember the Sequence!");
     sequenceButton.style.visibility = "hidden";
 
     compSequence[sequenceNum] = random(1, 4); //increase sequence
@@ -178,55 +303,76 @@ async function getSequence()
         {
             //red
             console.log("red");
-            oneButton.style.backgroundColor = "black";
-            twoButton.style.backgroundColor = "yellow";
-            threeButton.style.backgroundColor = "green";
-            fourButton.style.backgroundColor = "blue";
-            //await delay(500)
+            oneButton.style.boxShadow = "inset 0 0 50px #fff, inset 20px 0 80px rgb(255, 0, 119), inset -20px 0 80px rgb(255, 174, 0),  inset 20px 0 300px rgb(255, 0, 132),   inset -20px 0 300px rgb(255, 166, 0),  0 0 50px #fff, -10px 0 80px rgb(255, 0, 102), 10px 0 80px rgb(255, 149, 0) ";
+            twoButton.style.boxShadow = "none";
+            threeButton.style.boxShadow = "none";
+            fourButton.style.boxShadow = "none";
+            audio1.play();
+            await delay(400);
+            oneButton.style.boxShadow = "none";
+            await delay(150);
+
         }
 
         if (compSequence[i] === 2)
         {
             //yellow
             console.log("yellow");
-            oneButton.style.backgroundColor = "red";
-            twoButton.style.backgroundColor = "black";
-            threeButton.style.backgroundColor = "green";
-            fourButton.style.backgroundColor = "blue";
+            oneButton.style.boxShadow = "none";
+            twoButton.style.boxShadow = "inset 0 0 50px #fff, inset 20px 0 80px rgb(255, 187, 0),   inset -20px 0 80px rgb(251, 255, 0), inset 20px 0 300px rgb(255, 234, 0),  inset -20px 0 300px rgb(251, 255, 0),  0 0 50px #fff,   -10px 0 80px rgb(255, 217, 0),  10px 0 80px rgb(255, 255, 0)";    
+            threeButton.style.boxShadow = "none";
+            fourButton.style.boxShadow = "none";
+            audio2.play();
+            await delay(400);
+            twoButton.style.boxShadow = "none";
+
+            await delay(150);
         }
 
         if (compSequence[i] === 3)
         {
             //green
             console.log("green");
-            oneButton.style.backgroundColor = "red";
-            twoButton.style.backgroundColor = "yellow";
-            threeButton.style.backgroundColor = "black";
-            fourButton.style.backgroundColor = "blue";
+            oneButton.style.boxShadow = "none";
+            twoButton.style.boxShadow = "none";
+            threeButton.style.boxShadow = "inset 0 0 50px #fff, inset 20px 0 80px rgb(83, 177, 10), inset -20px 0 80px rgb(0, 255, 157), inset 20px 0 300px rgb(64, 173, 17), inset -20px 0 300px rgb(0, 255, 153), 0 0 50px #fff, -10px 0 80px rgb(115, 255, 0), 10px 0 80px rgb(12, 200, 59)";
+            fourButton.style.boxShadow = "none";
+            audio3.play();
+            await delay(400);
+            threeButton.style.boxShadow = "none";
+            await delay(150);
         }
 
         if (compSequence[i] === 4)
         {
             //blue
             console.log("blue");
-            oneButton.style.backgroundColor = "red";
-            twoButton.style.backgroundColor = "yellow";
-            threeButton.style.backgroundColor = "green";
-            fourButton.style.backgroundColor = "black";
+            oneButton.style.boxShadow = "none";
+            twoButton.style.boxShadow = "none";
+            threeButton.style.boxShadow = "none";
+            fourButton.style.boxShadow = "inset 0 0 50px #fff, inset 20px 0 80px rgb(106, 0, 255), inset -20px 0 80px rgb(0, 149, 255), inset 20px 0 300px rgb(170, 0, 255), inset -20px 0 300px rgb(0, 136, 255), 0 0 50px #fff, -10px 0 80px rgb(166, 0, 255), 10px 0 80px rgb(0, 179, 255)";  
+            audio4.play();
+            await delay(400);
+            fourButton.style.boxShadow = "none";
+            await delay(150);
         }
 
-        await delay(500);
+       // await delay(500);
 
     }
+    await delay(200);
 
-    oneButton.style.backgroundColor = "red";
-    twoButton.style.backgroundColor = "yellow";
-    threeButton.style.backgroundColor = "green";
-    fourButton.style.backgroundColor = "blue";
+    oneButton.style.boxShadow = "none";
+    twoButton.style.boxShadow = "none";
+    threeButton.style.boxShadow = "none";
+    fourButton.style.boxShadow = "none";
 
     startButton.style.visibility = "visible";
 
-
+    oneButton.style.visibility = "hidden";
+    twoButton.style.visibility = "hidden";
+    threeButton.style.visibility = "hidden";
+    fourButton.style.visibility = "hidden";
 
 }
 
@@ -253,10 +399,63 @@ function failed()
     sequenceNum = 0;
     userNum = 0;
     console.log("Game Over!");
-
+    prevScore = score;
+    title.textContent = ("Game Over! Score: " + prevScore);
+    sequenceButton.style.visibility = "visible";
+    score = 0;
     //display a failure message
 
 }
+
+
+oneButton.onmousedown = function()
+{
+    oneButton.style.boxShadow = "inset 0 0 50px #fff, inset 20px 0 80px rgb(255, 0, 119), inset -20px 0 80px rgb(255, 174, 0),  inset 20px 0 300px rgb(255, 0, 132),   inset -20px 0 300px rgb(255, 166, 0),  0 0 50px #fff, -10px 0 80px rgb(255, 0, 102), 10px 0 80px rgb(255, 149, 0) ";
+    audio1.play();
+};
+
+oneButton.onmouseup = function()
+{
+    oneButton.style.boxShadow = "none";
+};
+
+
+twoButton.onmousedown = function()
+{
+    twoButton.style.boxShadow = "inset 0 0 50px #fff, inset 20px 0 80px rgb(255, 187, 0),   inset -20px 0 80px rgb(251, 255, 0), inset 20px 0 300px rgb(255, 234, 0),  inset -20px 0 300px rgb(251, 255, 0),  0 0 50px #fff,   -10px 0 80px rgb(255, 217, 0),  10px 0 80px rgb(255, 255, 0)";    
+    audio2.play();
+};
+
+twoButton.onmouseup = function()
+{
+    twoButton.style.boxShadow = "none";
+};
+
+
+
+threeButton.onmousedown = function()
+{
+    threeButton.style.boxShadow = "inset 0 0 50px #fff, inset 20px 0 80px rgb(83, 177, 10), inset -20px 0 80px rgb(0, 255, 157), inset 20px 0 300px rgb(64, 173, 17), inset -20px 0 300px rgb(0, 255, 153), 0 0 50px #fff, -10px 0 80px rgb(115, 255, 0), 10px 0 80px rgb(12, 200, 59)";
+    audio3.play();
+};
+
+threeButton.onmouseup = function()
+{
+    threeButton.style.boxShadow = "none";
+};
+
+
+
+fourButton.onmousedown = function()
+{
+    fourButton.style.boxShadow = "inset 0 0 50px #fff, inset 20px 0 80px rgb(106, 0, 255), inset -20px 0 80px rgb(0, 149, 255), inset 20px 0 300px rgb(170, 0, 255), inset -20px 0 300px rgb(0, 136, 255), 0 0 50px #fff, -10px 0 80px rgb(166, 0, 255), 10px 0 80px rgb(0, 179, 255)";  
+    audio4.play();
+};
+
+fourButton.onmouseup = function()
+{
+    fourButton.style.boxShadow = "none";
+};
 
 
 
@@ -351,3 +550,7 @@ function startFun()
 }*/
 
 
+//on mouse down
+//mouse events
+//<p onmousedown="myFunction()">Click the text!</p>
+//object.onmousedown = function(){myScript};
