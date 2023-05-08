@@ -48,6 +48,7 @@ const audio4 = new Audio("/audio/beep4.mp3");
 
 async function startGame()
 {
+    score = 0;
     title.textContent = ("Starting up...");
     //reduce visibility of button
     startButton.style.visibility ="hidden";
@@ -330,7 +331,7 @@ function failed()
     console.log("Game Over!");
     prevScore = score;
     title.textContent = ("Game Over! Score: " + prevScore);
-    score = 0;
+    
     startButton.style.visibility ="visible";
 
 }
