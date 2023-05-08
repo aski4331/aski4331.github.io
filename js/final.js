@@ -9,6 +9,12 @@ let score = 0;
 let prevScore = 0;
 
 
+//Source for delay function:
+//https://stackoverflow.com/questions/14226803/wait-5-seconds-before-executing-next-line
+const delay = ms => new Promise(res => setTimeout(res, ms));
+
+
+
 const oneButton = document.querySelector('#one');
 oneButton.addEventListener('click', redClick);
 
@@ -22,10 +28,8 @@ const fourButton = document.querySelector('#four');
 fourButton.addEventListener('click', blueClick);
 
 const startButton = document.querySelector('#start');
-startButton.addEventListener('click', start); //start
+startButton.addEventListener('click', startGame); //start
 
-const sequenceButton = document.querySelector('#sequence');
-sequenceButton.addEventListener('click', getSequence);
 
 const title = document.querySelector('#words');
 
@@ -42,42 +46,30 @@ const audio4 = new Audio("/audio/beep4.mp3");
 //start game button 
 //on start, play a song, then delay, then start first sequence
 
-function startGame()
+async function startGame()
 {
-    audio1.play();  delay(500);
-    audio2.play();  delay(500);
-    audio3.play();  delay(500);
-    audio4.play();  delay(500);
+    title.textContent = ("Starting up...");
+    //reduce visibility of button
+    startButton.style.visibility ="hidden";
+
+    fourButton.style.boxShadow = "inset 0 0 50px #fff, inset 20px 0 80px rgb(106, 0, 255), inset -20px 0 80px rgb(0, 149, 255), inset 20px 0 300px rgb(170, 0, 255), inset -20px 0 300px rgb(0, 136, 255), 0 0 50px #fff, -10px 0 80px rgb(166, 0, 255), 10px 0 80px rgb(0, 179, 255)";  
+    audio4.play();  await delay(200); fourButton.style.boxShadow = "none";
+
+    oneButton.style.boxShadow = "inset 0 0 50px #fff, inset 20px 0 80px rgb(255, 0, 119), inset -20px 0 80px rgb(255, 174, 0),  inset 20px 0 300px rgb(255, 0, 132),   inset -20px 0 300px rgb(255, 166, 0),  0 0 50px #fff, -10px 0 80px rgb(255, 0, 102), 10px 0 80px rgb(255, 149, 0) ";
+    audio1.play();  await delay(200); oneButton.style.boxShadow = "none";
+
+    twoButton.style.boxShadow = "inset 0 0 50px #fff, inset 20px 0 80px rgb(255, 187, 0),   inset -20px 0 80px rgb(251, 255, 0), inset 20px 0 300px rgb(255, 234, 0),  inset -20px 0 300px rgb(251, 255, 0),  0 0 50px #fff,   -10px 0 80px rgb(255, 217, 0),  10px 0 80px rgb(255, 255, 0)";    
+    audio2.play();  await delay(200); twoButton.style.boxShadow = "none";
+
+    threeButton.style.boxShadow = "inset 0 0 50px #fff, inset 20px 0 80px rgb(83, 177, 10), inset -20px 0 80px rgb(0, 255, 157), inset 20px 0 300px rgb(64, 173, 17), inset -20px 0 300px rgb(0, 255, 153), 0 0 50px #fff, -10px 0 80px rgb(115, 255, 0), 10px 0 80px rgb(12, 200, 59)";
+    audio3.play();  await delay(200); threeButton.style.boxShadow = "none";
+    
     console.log("Game has been started.");
-    delay(1500);
+    await delay(750);
+    title.textContent = ("Score: 0");
     getSequence();
 }
 
-
-
-
-
-/*
-function oneFun()
-{
-    console.log("testing button 1...");
-}
-
-function twoFun()
-{
-    console.log("testing button 2...");
-}
-
-function threeFun()
-{
-    console.log("testing button 3...");
-}
-
-function fourFun()
-{
-    console.log("testing button 4...");
-}
-*/
 
 
 
@@ -89,7 +81,6 @@ function random(min, max)
 }
 //end random function
 
-startButton.style.visibility = "hidden";
 //arrays:
 
 let compSequence = [];
@@ -99,17 +90,9 @@ let sequenceNum = 0;
 let userNum = 0;
 
 function start()
-{
-    startButton.style.visibility = "hidden";
-    
+{  
     userNum = 0;
     userSequence = [];
-
-    oneButton.style.visibility = "visible";
-    twoButton.style.visibility = "visible";
-    threeButton.style.visibility = "visible";
-    fourButton.style.visibility = "visible";
-
     timeStart();
 }
 
@@ -142,103 +125,88 @@ function redClick()
 {
     userSequence[userNum] = 1; //add to array
     userNum++; //increment number of items in array
-    //numClicks++; //increment number of clicks
 
-    if (end() > 2) //check time, over two seconds
+    if (end() > 1) //check time, over two seconds
         { console.log("too slow"); failed(); } //run failure function if time is over
     else if (userSequence[userNum - 1] === compSequence[userNum - 1]) //checks if click was correct
         {
-            if (userNum == sequenceNum)
+            if (userNum == sequenceNum) //last click
             {
-
-                oneButton.style.visibility = "hidden";
-                twoButton.style.visibility = "hidden";
-                threeButton.style.visibility = "hidden";
-                fourButton.style.visibility = "hidden";
-
-                sequenceButton.style.visibility = "visible";
                 score++;
                 title.textContent = ("Score: " + score);
-
+                getSequence();
 
             }
-             timeStart(); 
+            
+
+            timeStart(); 
+            
         }  //starts new time
     else
-        { console.log(userSequence[userNum - 1] + " =? " + compSequence[userNum - 1]); failed(); } //run failure function
+        { failed(); } //run failure function
 }
 
 function yellowClick()
 {
     userSequence[userNum] = 2; //add to array
     userNum++; //increment number of items in array
-    //numClicks++; //increment number of clicks
 
-    if (end() > 2) //check time, over two seconds
+    if (end() > 1) //check time, over two seconds
         { failed(); } //run failure function if time is over
     else if (userSequence[userNum - 1] === compSequence[userNum - 1]) //checks if click was correct
         { 
             if (userNum == sequenceNum)
             {
 
-                oneButton.style.visibility = "hidden";
-                twoButton.style.visibility = "hidden";
-                threeButton.style.visibility = "hidden";
-                fourButton.style.visibility = "hidden";
-
-                sequenceButton.style.visibility = "visible";
                 score++;
                 title.textContent = ("Score: " + score);
 
-
+                getSequence();
             }
             
             timeStart(); 
+            
         
         }  //starts new time
     else
-        { console.log(userSequence[userNum - 1] + " =? " + compSequence[userNum - 1]); failed(); } //run failure function
+        {failed(); } //run failure function
 }
 
 function greenClick()
 {
     userSequence[userNum] = 3; //add to array
     userNum++; //increment number of items in array
-    //numClicks++; //increment number of clicks
 
-    if (end() > 2) //check time, over two seconds
+    if (end() > 1) //check time, over two seconds
         { failed(); } //run failure function if time is over
     else if (userSequence[userNum - 1] === compSequence[userNum - 1]) //checks if click was correct
         { 
             if (userNum == sequenceNum)
             {
 
-                oneButton.style.visibility = "hidden";
-                twoButton.style.visibility = "hidden";
-                threeButton.style.visibility = "hidden";
-                fourButton.style.visibility = "hidden";
 
-                sequenceButton.style.visibility = "visible";
+                //sequenceButton.style.visibility = "visible";
                 score++;
                 title.textContent = ("Score: " + score);
 
-
+                getSequence();
             }
-
+            
             timeStart(); 
+            
         
         }  //starts new time
     else
-        { console.log(userSequence[userNum - 1] + " =? " + compSequence[userNum - 1]); failed(); } //run failure function
+        { failed(); } //run failure function
 }
 
 function blueClick()
 {
     userSequence[userNum] = 4; //add to array
     userNum++; //increment number of items in array
-    //numClicks++; //increment number of clicks
 
-    if (end() > 2) //check time, over two seconds
+
+    if (end() > 1) //check time, over two seconds
         { failed(); } //run failure function if time is over
     else if (userSequence[userNum - 1] === compSequence[userNum - 1]) //checks if click was correct
         { 
@@ -246,51 +214,28 @@ function blueClick()
             if (userNum == sequenceNum)
             {
 
-                oneButton.style.visibility = "hidden";
-                twoButton.style.visibility = "hidden";
-                threeButton.style.visibility = "hidden";
-                fourButton.style.visibility = "hidden";
-
-                sequenceButton.style.visibility = "visible";
                 score++;
                 title.textContent = ("Score: " + score);
 
-
+                getSequence();
             }
             
             timeStart(); 
-        
-        
+           
         
         }  //starts new time
     else
-        { console.log(userSequence[userNum - 1] + " =? " + compSequence[userNum - 1]); failed(); } //run failure function
+        { failed(); } //run failure function
 }
 
 
 
-//if click is last one: if userNum  = sequencenum
-//hide game, show sequence button, increment score
-
-
-
-//style.visibility="hidden" "visible"
-
-
-//Source for delay function:
-//https://stackoverflow.com/questions/14226803/wait-5-seconds-before-executing-next-line
-const delay = ms => new Promise(res => setTimeout(res, ms));
 
 async function getSequence()
 {
+    await delay(500);
     title.textContent = ("Score: " + score);
-    oneButton.style.visibility = "visible";
-    twoButton.style.visibility = "visible";
-    threeButton.style.visibility = "visible";
-    fourButton.style.visibility = "visible";
-    
-    //title.textContent = ("Remember the Sequence!");
-    sequenceButton.style.visibility = "hidden";
+
 
     compSequence[sequenceNum] = random(1, 4); //increase sequence
     console.log(compSequence[sequenceNum]);
@@ -367,25 +312,10 @@ async function getSequence()
     threeButton.style.boxShadow = "none";
     fourButton.style.boxShadow = "none";
 
-    startButton.style.visibility = "visible";
+    
 
-    oneButton.style.visibility = "hidden";
-    twoButton.style.visibility = "hidden";
-    threeButton.style.visibility = "hidden";
-    fourButton.style.visibility = "hidden";
+    start();
 
-}
-
-
-function checkSequence()
-{
-    startButton.style.visibility = "hidden";
-    sequenceButton.style.visibility = "visible";
-
-    for (j = 0; j < sequenceNum; j++)
-    {
-       console.log(compSequence[j] + ", "); 
-    }
 }
 
 
@@ -393,7 +323,6 @@ function checkSequence()
 function failed()
 {
     //clear all arrays
-    //let clearArray = [];
     compSequence = [];
     userSequence = [];
     sequenceNum = 0;
@@ -401,12 +330,13 @@ function failed()
     console.log("Game Over!");
     prevScore = score;
     title.textContent = ("Game Over! Score: " + prevScore);
-    sequenceButton.style.visibility = "visible";
     score = 0;
-    //display a failure message
+    startButton.style.visibility ="visible";
 
 }
 
+
+//clicking glow functions:
 
 oneButton.onmousedown = function()
 {
@@ -456,101 +386,3 @@ fourButton.onmouseup = function()
 {
     fourButton.style.boxShadow = "none";
 };
-
-
-
-
-
-
-
-    //when button is clicked, check if it is black, if it is, (new function) check if it was clicked soon enough
-    // pick a new button to turn black
-    //if not, failure
-
-    //store array of random sequence
-    //when user clicks, store 
-
-/*
-function startFun()
-{
-    game = true;
-    //console.log(game);
-    //oneButton.style.backgroundColor = "black";
-
-    while(game == true)
-    {
-        for(let i = 0; i < sequenceNum; i++)
-        {
-            //turn on button
-
-            if (sequence[i] == 1)
-                {
-                    //red
-                    oneButton.style.backgroundColor = "black";
-                    twoButton.style.backgroundColor = "yellow";
-                    threeButton.style.backgroundColor = "green";
-                    fourButton.style.backgroundColor = "blue";
-            }
-
-            if (sequence[i] == 2)
-            {
-                //yellow
-                oneButton.style.backgroundColor = "red";
-                twoButton.style.backgroundColor = "black";
-                threeButton.style.backgroundColor = "green";
-                fourButton.style.backgroundColor = "blue";
-            }
-
-            if (sequence[i] == 3)
-            {
-                //green
-                oneButton.style.backgroundColor = "red";
-                twoButton.style.backgroundColor = "yellow";
-                threeButton.style.backgroundColor = "black";
-                fourButton.style.backgroundColor = "blue";
-            }
-
-            if (sequence[i] == 4)
-            {
-                //blue
-                oneButton.style.backgroundColor = "red";
-                twoButton.style.backgroundColor = "yellow";
-                threeButton.style.backgroundColor = "green";
-                fourButton.style.backgroundColor = "black";
-            }
-
-
-
-                    //wait until button gets pressed
-                /*
-                setTimeout(function () {
-                if (newState == -1) {
-                    alert('VIDEO HAS STOPPED');
-                }
-                }, 5000);
-
-                
-
-
-
-                //when button is clicked, check if it is black, if it is, (new function) check if it was clicked soon enough
-                // pick a new button to turn black
-                //if not, failure
-
-
-        } //end inner for loop (each length of sequence)
-
-        game= false;
-        sequence[sequenceNum] = random(1,4); //add new number to the array
-        sequenceNum++;
-    }
-
-
-
-}*/
-
-
-//on mouse down
-//mouse events
-//<p onmousedown="myFunction()">Click the text!</p>
-//object.onmousedown = function(){myScript};
